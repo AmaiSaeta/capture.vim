@@ -1,0 +1,62 @@
+*capture.txt*	For Vim version 7.3	Last change: 2012 Oct 22
+
+capture.vim			Capture the ex-command output to the new buffer
+								by AmaiSaeta
+
+==============================================================================
+CONTENTS						*capture-contents*
+
+Introduction	|capture-introduction|
+Usage		|capture-usage|
+Interface	|capture-interface|
+Changelog	|capture-changelog|
+
+==============================================================================
+INTRODUCTION						*capture-introduction*
+
+*capture.vim* is a Vim plugin to capture the Vim ex-command output to the new
+buffer.
+
+Latest version:
+	https://github.com/AmaiSaeta/capture.vim
+
+==============================================================================
+USAGE							*capture-usage*
+
+Capture the |:messages| output to the new horizontal splited window. >
+	:Capture horizontal messages
+<
+Same (horizontal split is default behavior). >
+	:Capture messages
+<
+Capture the |:ls| output to the new vertical splited window. >
+	:Capture vertical ls
+<
+
+==============================================================================
+INTERFACE						*capture-interface*
+
+:Capture {excommand}					*:Capture*
+	capture result by the {excommand}, and output it to the new splited
+	window.
+
+:Capture {splitcommand} {excommand}			*:Capture-splitcommand*
+	Capture result by the {excommand}, and output it to the new splited
+	window. At the time window split, used {splitcommand}.
+
+	The following commands can be specified as {splitcommand}.
+		horizontal, |:vertical|, |:leftabove|, |:aboveleft|,
+		|:rightbelow|, |:belowright|, |:topleft|, |:botright|
+							*:Capture-horizontal*
+	"horizontal" does not exist as a ex-command of Vim. This carries out
+	horizontal split of the window. Moreover, this is subject to the
+	influence of the 'splitright' option.
+
+==============================================================================
+CHANGELOG						*capture-changelog*
+
+1.00.20121022
+	- The first release!
+
+==============================================================================
+ vim:tw=78:ts=8:ft=help:norl:
