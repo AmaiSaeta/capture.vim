@@ -1,0 +1,65 @@
+*capture.jax*	Vim version 7.3用	Last change: 2012 Oct 22
+
+capture.vim	ex-commandの結果をキャプチャし、新たなバッファに出力します
+								by 天井冴太
+
+==============================================================================
+CONTENTS						*capture-introduction*
+
+Introduction	|capture-introduction|
+Usage		|capture-usage|
+Interface	|capture-interface|
+Changelog	|capture-changelog|
+
+==============================================================================
+INTRODUCTION						*capture-contents*
+
+*capture.vim* は、ex-commandの結果を新たに開いたバッファに出力する為のVim
+pluginです。
+
+最新版:
+	https://github.com/AmaiSaeta/capture.vim
+
+==============================================================================
+USAGE							*capture-usage*
+
+|:messages|の結果を、新規に開いた水平分割ウィンドウに出力します。 >
+	:Capture horizontal messages
+<
+同じく (デフォルトは水平分割ウィンドウとなります)。 >
+	:Capture messages
+<
+|:ls|の結果をキャプチャし、新たに開いた垂直分割ウィンドウに出力します。 >
+	:Capture vertical ls
+<
+
+==============================================================================
+INTERFACE						*capture-interface*
+
+:Capture {excommand}					*:Capture*
+	{excommand}の結果をキャプチャし、新規に開いた分割ウィンドウ内に出力し
+	ます。
+
+:Capture {splitcommand} {excommand}			*:Capture-splitcommand*
+	{excommand}の結果をキャプチャし、新規に開いた分割ウィンドウ内に出力し
+	ます。ウィンドウ分割時に、{splitcomamnd}を利用します。
+
+	{splitcommand}には、次のコマンドを使用することが出来ます。
+		horizontal, |:vertical|, |:leftabove|, |:aboveleft|,
+		|:rightbelow|, |:belowright|, |:topleft|, |:botright|
+							*:Capture-horizontal*
+	"horizontal" does not exist as a ex-command of Vim. This carries out
+	horizontal split of the window. Moreover, this is subject to the
+	influence of the 'splitright' option.
+	"horizontal"は、Vimに元々用意されているex-commandではありません。
+	これは、ウィンドウの水平分割を行います。また、このコマンドは
+	'splitright'の影響を受けます。
+
+==============================================================================
+CHANGELOG						*capture-changelog*
+
+1.00.20121022
+	- 初版!
+
+==============================================================================
+ vim:tw=78:ts=8:ft=help:norl:
