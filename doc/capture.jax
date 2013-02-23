@@ -1,4 +1,4 @@
-*capture.jax*	Vim version 7.3用	Last change: 2012 Oct 22
+*capture.jax*	Vim version 7.3用	Last change: 2013 Feb 23
 
 capture.vim	ex-commandの結果をキャプチャし、新たなバッファに出力します
 								by 天井冴太
@@ -48,9 +48,6 @@ INTERFACE						*capture-interface*
 		horizontal, |:vertical|, |:leftabove|, |:aboveleft|,
 		|:rightbelow|, |:belowright|, |:topleft|, |:botright|
 							*:Capture-horizontal*
-	"horizontal" does not exist as a ex-command of Vim. This carries out
-	horizontal split of the window. Moreover, this is subject to the
-	influence of the 'splitright' option.
 	"horizontal"は、Vimに元々用意されているex-commandではありません。
 	これは、ウィンドウの水平分割を行います。また、このコマンドは
 	'splitright'の影響を受けます。
