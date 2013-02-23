@@ -9,13 +9,14 @@ command! -nargs=+ -complete=command Capture call s:capture(<q-args>)
 function! s:capture(args)
 	let arg1stEnd = stridx(a:args, " ")
 	let arg1stEnd = (arg1stEnd > 0) ? arg1stEnd : 0
+	let arg1st = strpart(a:args, 0, arg1stEnd)
 
-	" [TODO] To allow command omission signages. (vertical->vert etc.)
-	let winComs = ["horizontal", "vertical", "leftabove", "aboveleft", "rightbelow", "belowright", "topleft", "botright"]
+	let winComs = ['horizontal', 'vert\%[ical]', 'lefta\%[bove]', 'abo\%[veleft]', 'rightb\%[elow]', 'bel\%[owright]', 'to\%[pleft]', 'bo\%[tright]']
 	let winCom = "horizontal"	" 'horizontal' is default.
-	let winComIdx = index(winComs, strpart(a:args, 0, arg1stEnd))
-	if winComIdx >= 0	" found
-		let winCom = winComs[winComIdx]
+	let winComHits = filter(winComs, 'arg1st =~# v:val')
+ 
+	if len(winComHits)	" found
+		let winCom = matchstr(winComHits[0], '^\w\+')	" delete '\%[]' part
 		let args = strpart(a:args, arg1stEnd + 1)	" delete 1st token(=window create command).
 	else
 		let args = a:args
