@@ -47,6 +47,8 @@ INTERFACE						*capture-interface*
 	{splitcommand}には、次のコマンドを使用することが出来ます。
 		horizontal, |:vertical|, |:leftabove|, |:aboveleft|,
 		|:rightbelow|, |:belowright|, |:topleft|, |:botright|
+	これらは通常のコマンドと同様に、省略した記法が許されます。
+	(例: vertical → vert)
 							*:Capture-horizontal*
 	"horizontal"は、Vimに元々用意されているex-commandではありません。
 	これは、ウィンドウの水平分割を行います。また、このコマンドは
