@@ -1,6 +1,6 @@
-*capture.jax*	Vim version 7.3用	Last change: 2013 Feb 23
+*capture.jax*	ex-commandの結果をキャプチャし、新たなバッファに出力します
 
-capture.vim	ex-commandの結果をキャプチャし、新たなバッファに出力します
+capture.vim	
 								by 天井冴太
 
 ==============================================================================

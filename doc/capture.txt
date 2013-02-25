@@ -1,6 +1,6 @@
-*capture.txt*	For Vim version 7.3	Last change: 2013 Feb 23
+*capture.txt*			Capture the ex-command output to the new buffer.
 
-capture.vim			Capture the ex-command output to the new buffer
+capture.vim
 								by AmaiSaeta
 
 ==============================================================================
